@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Kain Kombat Simulator</title>
+      <link rel="stylesheet" href="style/dist.css" />
+   </head>
+   <body>
+      <div class="background-image">
+         <div class="container">
+            <div class="row">
+               <div class="col-12">
+                  <h1 class="d-inline text-brand">Kain's Kombat Simulator</h1>
+               </div>
+               <div class="col-lg-10 offset-lg-1">
+                  <div class="row">
+                     <div class="col-12 col-md-6 mb-6">
+                        <div class="card p-4 mr-md-5 landing" id="sign-up-card">
+                           <div class="card-block">
+                              <h2 class="card-title lead">
+                                 Ready for adventure?
+                              </h2>
+                              <p class="card-text">
+                                 Create a character.
+                                 <button
+                                    class="
+                                       mt-5
+                                       btn
+                                       landing-button
+                                       btn-success btn-block
+                                    "
+                                    id="sign-up"
+                                 >
+                                    On to Adventure!
+                                 </button>
+                              </p>
+                           </div>
+                        </div>
+
+                        <div class="card p-4 d-none landing" id="intro-card">
+                           <div class="card-block">
+                              <h2 class="card-title lead">
+                                 Ready for adventure?
+                              </h2>
+                              <p>Create a character.</p>
+                              <p class="mt-3 text-success">
+                                 Let's get you started.
+                              </p>
+                              <p class="mt-6">Email address</p>
+                              <input
+                                 class="form-control"
+                                 id="sign-up-email-input"
+                                 type="text"
+                              />
+                              <div
+                                 class="text-danger"
+                                 id="sign-up-email-error"
+                              ></div>
+                              <p>Password</p>
+                              <input
+                                 class="form-control"
+                                 id="sign-up-password-input"
+                                 type="password"
+                              />
+                              <div
+                                 class="text-danger"
+                                 id="sign-up-password-error"
+                              ></div>
+                              <div
+                                 class="text-muted"
+                                 id="sign-up-password-error-addendum"
+                              ></div>
+                              <button
+                                 class="
+                                    btn
+                                    mt-5
+                                    landing-button
+                                    btn-success btn-block
+                                 "
+                                 id="lets-go"
+                              >
+                                 Let's go!
+                              </button>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="col-md-6 col-12">
+                        <div class="card p-4 ml-md-5 landing">
+                           <div class="card-block">
+                              <h2 class="card-title lead">
+                                 Continuing your adventure?
+                              </h2>
+                              <p class="card-text">
+                                 Log in with your email address and password.
+                              </p>
+                              <p class="mt-3">Email address</p>
+                              <input class="form-control" type="text" />
+                              <p class="mt-3">Password</p>
+                              <input class="form-control" type="password" />
+
+                              <a
+                                 href="/arena.html"
+                                 class="
+                                    btn
+                                    mt-5
+                                    btn-success
+                                    landing-button
+                                    float-right
+                                 "
+                              >
+                                 Log in
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script
+         src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+         defer
+         integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+         crossorigin="anonymous"
+      ></script>
+      <script src="/dbUsers.js" defer></script>
+      <script src="/allInsecurePasswords.js" defer></script>
+      <script src="/secondMostInsecurePasswords.js" defer></script>
+      <script src="/mostInsecurePasswords.js" defer></script>
+      <script src="/getEmailError.js" defer></script>
+      <script src="/getPasswordError.js" defer></script>
+      <script src="/script.js" defer></script>
+   </body>
+</html>

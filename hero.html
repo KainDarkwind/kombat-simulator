@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Kain's Kombat Simulator</title>
+      <link rel="stylesheet" href="style/dist.css" />
+   </head>
+   <body>
+      <div class="container">
+         <div class="row">
+            <div class="col-12">
+               <a href="/index.html">
+                  <img src="icons/sword01.svg" width="28px" />
+                  <h3 class="d-inline text-brand">
+                     Kain's Kombat Simulator
+                  </h3></a
+               >
+            </div>
+         </div>
+      </div>
+      <div class="container">
+         <div class="row">
+            <div class="col-12">
+               <a href="/arena.html" class="btn btn-link mt-5 mr-5"
+                  ><img src="icons/sword02.svg" width="28px" />Arena</a
+               >
+               <a href="/equipment.html" class="btn btn-link mt-5 ml-5"
+                  ><img src="icons/sword02.svg" width="28px" />My Equipment</a
+               >
+            </div>
+         </div>
+      </div>
+      <div class="container">
+         <div class="row">
+            <div class="col-4">
+               <img src="images/hero-female.jpg" width="200px" />
+            </div>
+            <div class="col-4">
+               <div class="container">
+                  <div class="row">
+                     <p class="font-weight-bold">Hero Stats</p>
+                     <div class="container">
+                        <div class="row">
+                           <div class="col-6 d-inline font-weight-bold">
+                              Strength:
+                           </div>
+                           <div class="col-6 d-inline" id="hero-strength"></div>
+                        </div>
+                     </div>
+                     <div class="container">
+                        <div class="row">
+                           <div class="col-6 d-inline font-weight-bold">
+                              Dexterity:
+                           </div>
+
+                           <div
+                              class="col-6 d-inline"
+                              id="hero-dexterity"
+                           ></div>
+                        </div>
+                     </div>
+                     <div class="container">
+                        <div class="row">
+                           <div class="col-6 d-inline font-weight-bold">
+                              Endurance:
+                           </div>
+
+                           <div
+                              class="col-6 d-inline"
+                              id="hero-endurance"
+                           ></div>
+                        </div>
+                     </div>
+                     <div class="container">
+                        <div class="row">
+                           <div class="col-6 d-inline font-weight-bold">
+                              Mind:
+                           </div>
+
+                           <div class="col-6 d-inline" id="hero-mind"></div>
+                        </div>
+                     </div>
+                     <div class="container">
+                        <div class="row">
+                           <div class="col-6 d-inline font-weight-bold">
+                              Agility:
+                           </div>
+
+                           <div class="col-6 d-inline" id="hero-agility"></div>
+                        </div>
+                     </div>
+                     <div class="container">
+                        <div class="row">
+                           <div class="col-6 d-inline font-weight-bold">
+                              Spirit:
+                           </div>
+
+                           <div class="col-6 d-inline" id="hero-spirit"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-4">
+               <p class="font-weight-bold">Hero Equipment</p>
+               <p class="font-weight-bold">Primary Hand:</p>
+               <p class="font-weight-bold">Off Hand:</p>
+               <p class="font-weight-bold">Armor:</p>
+               <p class="font-weight-bold">Helm:</p>
+               <p class="font-weight-bold">Boots:</p>
+               <p class="font-weight-bold">Arms:</p>
+            </div>
+         </div>
+      </div>
+      <div class="border p-1">
+         <div class="container">
+            <div class="row">
+               <div class="col-6">Level:</div>
+               <div class="d-inline" id="hero-level"></div>
+            </div>
+         </div>
+         <div class="container">
+            <div class="row">
+               <div class="col-6">Hit Points:</div>
+               <div class="d-inline" id="hero-hit-points"></div>
+            </div>
+         </div>
+
+         <div class="container">
+            <div class="row">
+               <div class="col-6">AC:</div>
+               <div class="d-inline" id="hero-armor-class"></div>
+            </div>
+         </div>
+
+         <div class="container">
+            <div class="row">
+               <div class="col-6">Weapon:</div>
+               <div class="d-inline" id="hero-weapon"></div>
+            </div>
+         </div>
+
+         <div class="container">
+            <div class="row">
+               <div class="col-6">Armor:</div>
+               <div class="d-inline" id="hero-armor"></div>
+            </div>
+         </div>
+
+         <div class="container">
+            <div class="row">
+               <div class="col-2">Str:</div>
+               <div class="d-inline col-2" id="hero-strength"></div>
+               <div class="d-inline col-2">Dex:</div>
+               <div class="d-inline col-2" id="hero-dexterity"></div>
+               <div class="d-inline col-2">Con:</div>
+               <div class="d-inline col-2" id="hero-constitution"></div>
+            </div>
+            <div class="row"></div>
+         </div>
+      </div>
+      <div class="btn btn-primary">
+         <a href="/arena.html">Clicking this takes you back to arena</a>
+      </div>
+
+      <script
+         src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+         defer
+         integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+         crossorigin="anonymous"
+      ></script>
+      <script src="/script.js" defer></script>
+   </body>
+</html>
