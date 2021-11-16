@@ -33,135 +33,73 @@
       </div>
       <div class="container">
          <div class="row">
-            <div class="col-4">
-               <img src="images/hero-female.jpg" width="200px" />
+            <div class="col-6">
+               <img src="images/hero-female.jpg" class="img-fluid" />
             </div>
-            <div class="col-4">
-               <div class="container">
-                  <div class="row">
-                     <p class="font-weight-bold">Hero Stats</p>
-                     <div class="container">
-                        <div class="row">
-                           <div class="col-6 d-inline font-weight-bold">
-                              Strength:
-                           </div>
-                           <div class="col-6 d-inline" id="hero-strength"></div>
-                        </div>
-                     </div>
-                     <div class="container">
-                        <div class="row">
-                           <div class="col-6 d-inline font-weight-bold">
-                              Dexterity:
-                           </div>
+            <div class="border p-1 col-3">
+               <div class="font-weight-bold">
+                  <u>Hero Stats</u>
+               </div>
+               <div class="col-6">
+                  <div class="d-inline font-weight-bold">Strength:</div>
+                  <div class="float-right d-inline" id="hero-strength"></div>
+               </div>
 
-                           <div
-                              class="col-6 d-inline"
-                              id="hero-dexterity"
-                           ></div>
-                        </div>
-                     </div>
-                     <div class="container">
-                        <div class="row">
-                           <div class="col-6 d-inline font-weight-bold">
-                              Endurance:
-                           </div>
-
-                           <div
-                              class="col-6 d-inline"
-                              id="hero-endurance"
-                           ></div>
-                        </div>
-                     </div>
-                     <div class="container">
-                        <div class="row">
-                           <div class="col-6 d-inline font-weight-bold">
-                              Mind:
-                           </div>
-
-                           <div class="col-6 d-inline" id="hero-mind"></div>
-                        </div>
-                     </div>
-                     <div class="container">
-                        <div class="row">
-                           <div class="col-6 d-inline font-weight-bold">
-                              Agility:
-                           </div>
-
-                           <div class="col-6 d-inline" id="hero-agility"></div>
-                        </div>
-                     </div>
-                     <div class="container">
-                        <div class="row">
-                           <div class="col-6 d-inline font-weight-bold">
-                              Spirit:
-                           </div>
-
-                           <div class="col-6 d-inline" id="hero-spirit"></div>
-                        </div>
-                     </div>
-                  </div>
+               <div class="col-6">
+                  <div class="d-inline font-weight-bold">Dexterity:</div>
+                  <div class="float-right d-inline" id="hero-dexterity"></div>
+               </div>
+               <div class="col-6">
+                  <div class="d-inline font-weight-bold">Endurance:</div>
+                  <div class="float-right d-inline" id="hero-endurance"></div>
+               </div>
+               <div class="col-6">
+                  <div class="d-inline font-weight-bold">Mind:</div>
+                  <div class="float-right d-inline" id="hero-mind"></div>
+               </div>
+               <div class="col-6">
+                  <div class="d-inline font-weight-bold">Agility:</div>
+                  <div class="float-right d-inline" id="hero-agility"></div>
+               </div>
+               <div class="col-6">
+                  <div class="d-inline font-weight-bold">Spirit:</div>
+                  <div class="float-right d-inline" id="hero-spirit"></div>
                </div>
             </div>
-            <div class="col-4">
-               <p class="font-weight-bold">Hero Equipment</p>
-               <p class="font-weight-bold">Primary Hand:</p>
-               <p class="font-weight-bold">Off Hand:</p>
-               <p class="font-weight-bold">Armor:</p>
-               <p class="font-weight-bold">Helm:</p>
-               <p class="font-weight-bold">Boots:</p>
-               <p class="font-weight-bold">Arms:</p>
-            </div>
-         </div>
-      </div>
-      <div class="border p-1">
-         <div class="container">
-            <div class="row">
-               <div class="col-6">Level:</div>
-               <div class="d-inline" id="hero-level"></div>
-            </div>
-         </div>
-         <div class="container">
-            <div class="row">
-               <div class="col-6">Hit Points:</div>
-               <div class="d-inline" id="hero-hit-points"></div>
-            </div>
-         </div>
 
-         <div class="container">
-            <div class="row">
-               <div class="col-6">AC:</div>
-               <div class="d-inline" id="hero-armor-class"></div>
+            <div class="border p-1 col-3">
+               <div class="font-weight-bold">
+                  <u>Hero Equipment</u>
+               </div>
+               <div class="col-10">
+                  <div class="d-inline font-weight-bold">Primary Hand:</div>
+                  <div
+                     class="float-right d-inline"
+                     id="hero-hand-primary"
+                  ></div>
+               </div>
+               <div class="col-10">
+                  <div class="font-weight-bold">Off Hand:</div>
+                  <div id="hero-hand-off"></div>
+               </div>
+               <div class="col-10">
+                  <div class="d-inline font-weight-bold">Armor:</div>
+                  <div class="float-right d-inline" id="hero-armor-body"></div>
+               </div>
+               <div class="col-10">
+                  <div class="font-weight-bold">Helm:</div>
+                  <div id="hero-armor-head"></div>
+               </div>
+               <div class="col-10">
+                  <div class="font-weight-bold">Boots:</div>
+                  <div id="hero-armor-foot"></div>
+               </div>
+               <div class="col-10">
+                  <div class="font-weight-bold">Arms:</div>
+                  <div id="hero-armor-arms"></div>
+               </div>
             </div>
          </div>
-
-         <div class="container">
-            <div class="row">
-               <div class="col-6">Weapon:</div>
-               <div class="d-inline" id="hero-weapon"></div>
-            </div>
-         </div>
-
-         <div class="container">
-            <div class="row">
-               <div class="col-6">Armor:</div>
-               <div class="d-inline" id="hero-armor"></div>
-            </div>
-         </div>
-
-         <div class="container">
-            <div class="row">
-               <div class="col-2">Str:</div>
-               <div class="d-inline col-2" id="hero-strength"></div>
-               <div class="d-inline col-2">Dex:</div>
-               <div class="d-inline col-2" id="hero-dexterity"></div>
-               <div class="d-inline col-2">Con:</div>
-               <div class="d-inline col-2" id="hero-constitution"></div>
-            </div>
-            <div class="row"></div>
-         </div>
-      </div>
-      <div class="btn btn-primary">
-         <a href="/arena.html">Clicking this takes you back to arena</a>
       </div>
 
       <script
@@ -170,6 +108,7 @@
          integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
          crossorigin="anonymous"
       ></script>
+      <script src="/combat.js" defer></script>
       <script src="/script.js" defer></script>
    </body>
 </html>

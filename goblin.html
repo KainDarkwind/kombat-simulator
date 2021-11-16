@@ -24,6 +24,55 @@
                <a href="/arena.html" class="btn btn-link mt-5 mr-5"
                   ><img src="icons/sword02.svg" width="28px" />Arena</a
                >
+
+               <div
+                  class="
+                     float-right
+                     mt-5
+                     custom-control custom-radio custom-control-inline
+                  "
+               >
+                  <input
+                     type="radio"
+                     id="goblin"
+                     name="search"
+                     class="custom-control-input"
+                     checked
+                  />
+                  <label class="custom-control-label" for="goblin"
+                     >Goblin</label
+                  >
+               </div>
+               <div
+                  class="
+                     float-right
+                     mt-5
+                     custom-control custom-radio custom-control-inline
+                  "
+               >
+                  <input
+                     type="radio"
+                     id="orc"
+                     name="search"
+                     class="custom-control-input"
+                  />
+                  <label class="custom-control-label" for="orc">Orc</label>
+               </div>
+               <div
+                  class="
+                     float-right
+                     mt-5
+                     custom-control custom-radio custom-control-inline
+                  "
+               >
+                  <input
+                     type="radio"
+                     id="ogre"
+                     name="search"
+                     class="custom-control-input"
+                  />
+                  <label class="custom-control-label" for="ogre">Ogre</label>
+               </div>
             </div>
          </div>
          <hr class="font-weight-bold" />
@@ -42,20 +91,20 @@
             <div class="col-4">
                <button
                   class="btn btn-block btn-primary ml-2 mt-9"
-                  id="stab-button-goblin"
+                  id="stab-button-opponent"
                >
                   Stab
                </button>
                <button
                   class="btn btn-block btn-primary ml-2 mt-3"
-                  id="slash-button-goblin"
+                  id="slash-button-opponent"
                >
                   Slash
                </button>
 
                <button
                   class="btn btn-block btn-primary ml-2 mt-3"
-                  id="defend-button-goblin"
+                  id="defend-button-opponent"
                >
                   Defend
                </button>
@@ -73,61 +122,63 @@
       <div class="container">
          <div class="row">
             <div class="col-4 border p-1">
-               <p class="font-weight-bold text-center">Goblin</p>
+               <p class="font-weight-bold text-center">Opponent</p>
                <div class="container">
                   <div class="row">
                      <div class="col-6">Level:</div>
-                     <div class="d-inline" id="goblin-level"></div>
+                     <div class="d-inline" id="opponent-level"></div>
                   </div>
                </div>
                <div class="container">
                   <div class="row">
                      <div class="col-6">Hit Points:</div>
-                     <div class="d-inline" id="goblin-hit-points"></div>
+                     <div class="d-inline" id="opponent-hit-points"></div>
                   </div>
                </div>
 
                <div class="container">
                   <div class="row">
                      <div class="col-6">AC:</div>
-                     <div class="d-inline" id="goblin-armor-class"></div>
+                     <div class="d-inline" id="opponent-armor-class"></div>
                   </div>
                </div>
 
                <div class="container">
                   <div class="row">
                      <div class="col-6">Weapon:</div>
-                     <div class="d-inline" id="goblin-weapon"></div>
+                     <div class="d-inline" id="opponent-weapon"></div>
                   </div>
                </div>
 
                <div class="container">
                   <div class="row">
                      <div class="col-6">Armor:</div>
-                     <div class="d-inline" id="goblin-armor"></div>
+                     <div class="d-inline" id="opponent-armor"></div>
                   </div>
                </div>
 
                <div class="container">
                   <div class="row">
                      <div class="col-2">Str:</div>
-                     <div class="d-inline col-2" id="goblin-strength"></div>
+                     <div class="d-inline col-2" id="opponent-strength"></div>
                      <div class="d-inline col-2">Dex:</div>
-                     <div class="d-inline col-2" id="goblin-dexterity"></div>
+                     <div class="d-inline col-2" id="opponent-dexterity"></div>
                      <div class="d-inline col-2">End:</div>
-                     <div class="d-inline col-2" id="goblin-endurance"></div>
+                     <div class="d-inline col-2" id="opponent-endurance"></div>
                   </div>
                   <div class="row">
                      <div class="col-2">Mnd:</div>
-                     <div class="d-inline col-2" id="goblin-mind"></div>
+                     <div class="d-inline col-2" id="opponent-mind"></div>
                      <div class="d-inline col-2">Agi:</div>
-                     <div class="d-inline col-2" id="goblin-agility"></div>
+                     <div class="d-inline col-2" id="opponent-agility"></div>
                      <div class="d-inline col-2">Spr:</div>
-                     <div class="d-inline col-2" id="goblin-spirit"></div>
+                     <div class="d-inline col-2" id="opponent-spirit"></div>
                   </div>
                </div>
             </div>
-            <div class="col-4"></div>
+            <div class="col-4 mt-8 p-5 border">
+               <p id="combat-readout"></p>
+            </div>
             <div class="col-4 mt-1 border p-1" id="hero-full-col">
                <p class="font-weight-bold text-center">Hero</p>
                <div class="container">
@@ -182,14 +233,6 @@
                      <div class="d-inline col-2" id="hero-spirit"></div>
                   </div>
                </div>
-            </div>
-         </div>
-      </div>
-
-      <div class="container">
-         <div class="row">
-            <div class="col-4 offset-4 mt-8 p-5 border">
-               <p id="combat-readout-goblin"></p>
             </div>
          </div>
       </div>

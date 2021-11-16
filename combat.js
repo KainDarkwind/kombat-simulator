@@ -1,72 +1,106 @@
-const noArmor = {
-   description: "nothing",
-   damageReduction: 0,
-   armorClass: 5,
-   apRegen: 0,
-};
-const leather = {
-   description: "leather armor",
-   damageReduction: 0,
-   armorClass: 12,
-   apRegen: 1,
-};
+const armors = [
+   {
+      name: "noArmor",
+      description: "nothing",
+      damageReduction: 0,
+      armorClass: 5,
+      apRegen: 0,
+      inPossession: true,
+   },
+   {
+      name: "leather",
+      description: "leather armor",
+      damageReduction: 0,
+      armorClass: 12,
+      apRegen: 1,
+      inPossession: false,
+   },
+   {
+      name: "chainmail",
+      description: "chainmail armor",
+      damageReduction: 1,
+      armorClass: 9,
+      apRegen: 0,
+      inPossession: true,
+   },
+   {
+      name: "platemail",
+      description: "platemail armor",
+      damageReduction: 2,
+      armorClass: 6,
+      apRegen: -1,
+      inPossession: false,
+   },
+];
 
-const chainmail = {
-   description: "chainmail armor",
-   damageReduction: 1,
-   armorClass: 9,
-   apRegen: 0,
-};
-const platemail = {
-   description: "platemail armor",
-   damageReduction: 2,
-   armorClass: 6,
-   apRegen: -1,
-};
+const weapons = [
+   {
+      name: "dagger",
+      description: "dagger",
+      attack: 0,
+      damageMin: 1,
+      damageMax: 4,
+      apCost: -1,
+      backstab: 2,
+      inPossession: false,
+   },
 
-const dagger = {
-   description: "dagger",
-   attack: 0,
-   damageMin: 1,
-   damageMax: 4,
-   apCost: -1,
-   backstab: 2,
-};
+   {
+      name: "sword",
+      description: "sword",
+      attack: 1,
+      damageMin: 1,
+      damageMax: 8,
+      apCost: 0,
+      backstab: 0,
+      inPossession: true,
+   },
+   {
+      name: "axe",
+      description: "axe",
+      attack: 0,
+      damageMin: 1,
+      damageMax: 12,
+      apCost: 1,
+      backstab: 0,
+      inPossession: false,
+   },
+];
 
-const sword = {
-   description: "sword",
-   attack: 1,
-   damageMin: 1,
-   damageMax: 8,
-   apCost: 0,
-   backstab: 0,
-};
-
-const axe = {
-   description: "axe",
-   attack: 0,
-   damageMin: 1,
-   damageMax: 12,
-   apCost: 1,
-   backstab: 0,
-};
-
-const goblin = {
-   name: "Goblin",
-   level: 1,
-   image: "goblin2.jpg",
-   hitDie: 6,
-   maxHp: 6,
-   armor: noArmor,
-   attack: 2,
-   weapon: axe,
-   strength: -1,
-   dexterity: 1,
-   endurance: -1,
-   mind: -1,
-   agility: 1,
-   spirit: -1,
-};
+const monsters = [
+   {
+      name: "Goblin",
+      level: 1,
+      image: "goblin2.jpg",
+      hitDie: 6,
+      maxHp: 6,
+      armor: armors[0],
+      attack: 2,
+      weapon: weapons[0],
+      strength: -1,
+      dexterity: 1,
+      endurance: -1,
+      mind: -1,
+      agility: 1,
+      spirit: -1,
+   },
+   {
+      name: "Orc",
+      level: 2,
+      image: "orc2.jpg",
+      hitDie: 8,
+      maxHp: 8,
+      armor: armors[0],
+      attack: 2,
+      weapon: weapons[2],
+      strength: 3,
+      dexterity: 1,
+      endurance: 2,
+      mind: -1,
+      agility: 1,
+      spirit: 0,
+   },
+];
 
 const hero = {
    name: "Hero",
@@ -74,9 +108,9 @@ const hero = {
    image: "hero-female.jpg",
    hitDie: 10,
    maxHp: 10,
-   armor: chainmail,
+   armor: armors[2],
    attack: 2,
-   weapon: sword,
+   weapon: weapons[1],
    strength: 2,
    dexterity: 2,
    endurance: 4,
@@ -85,22 +119,31 @@ const hero = {
    spirit: 3,
 };
 
-const goblinMaxHitPoints = getHitPoints(goblin);
-let goblinCurrentHitPoints = goblinMaxHitPoints;
+const opponent = getOpponent("goblin");
+
+const opponentMaxHitPoints = getHitPoints(opponent);
+let opponentCurrentHitPoints = opponentMaxHitPoints;
 const heroMaxHitPoints = getHitPoints(hero);
 let heroCurrentHitPoints = heroMaxHitPoints;
 
-$(`#goblin-hit-points`).html(`${goblinCurrentHitPoints}/${goblinMaxHitPoints}`);
-$(`#goblin-level`).html(goblin.level);
-$(`#goblin-armor-class`).html(goblin.armor.armorClass + hero.agility);
-$(`#goblin-weapon`).html(goblin.weapon.description);
-$(`#goblin-armor`).html(goblin.armor.description);
-$(`#goblin-strength`).html(goblin.strength);
-$(`#goblin-dexterity`).html(goblin.dexterity);
-$(`#goblin-endurance`).html(goblin.endurance);
-$(`#goblin-mind`).html(goblin.mind);
-$(`#goblin-agility`).html(goblin.agility);
-$(`#goblin-spirit`).html(goblin.spirit);
+console.log("The opponent", opponent);
+console.log("The opponent's level", opponent.level);
+
+$(`#opponent-hit-points`).html(
+   `${opponentCurrentHitPoints}/${opponentMaxHitPoints}`
+);
+$(`#opponent-level`).html(opponent.level);
+$(`#opponent-armor-class`).html(
+   /*opponent.armor.armorClass + */ opponent.agility
+);
+$(`#opponent-weapon`).html(opponent.weapon.description);
+$(`#opponent-armor`).html(opponent.armor.description);
+$(`#opponent-strength`).html(opponent.strength);
+$(`#opponent-dexterity`).html(opponent.dexterity);
+$(`#opponent-endurance`).html(opponent.endurance);
+$(`#opponent-mind`).html(opponent.mind);
+$(`#opponent-agility`).html(opponent.agility);
+$(`#opponent-spirit`).html(opponent.spirit);
 
 $(`#hero-armor-class`).html(hero.armor.armorClass + hero.agility);
 $(`#hero-hit-points`).html(`${heroCurrentHitPoints}/${heroMaxHitPoints}`);
@@ -113,6 +156,8 @@ $(`#hero-endurance`).html(hero.endurance);
 $(`#hero-mind`).html(hero.mind);
 $(`#hero-agility`).html(hero.agility);
 $(`#hero-spirit`).html(hero.spirit);
+$(`#hero-hand-primary`).html(hero.weapon.name);
+$(`#hero-armor-body`).html(hero.armor.name);
 
 const stab = {
    description: "stabs",
@@ -126,20 +171,32 @@ const slash = {
    apCost: 3,
 };
 
-$("#stab-button-goblin").click(function (e) {
-   rollCombat(goblin, hero, slash);
-   rollCombat(hero, goblin, stab);
+const defend = {
+   description: "defends",
+   apCost: -2,
+};
+
+$("#stab-button-opponent").click(function (e) {
+   rollCombat(opponent, hero, slash);
+   rollCombat(hero, opponent, stab);
 });
 
-$("#slash-button-goblin").click(function (e) {
-   rollCombat(goblin, hero, slash);
-   rollCombat(hero, goblin, slash);
+$("#slash-button-opponent").click(function (e) {
+   rollCombat(opponent, hero, slash);
+   rollCombat(hero, opponent, slash);
 });
 
-$("#defend-button-goblin").click(function (e) {
+$("#defend-button-opponent").click(function (e) {
    const heroDef = rollDefense(hero);
-   rollCombat(goblin, heroDef, slash);
+   rollCombat(hero, opponent, defend);
+   rollCombat(opponent, heroDef, slash);
 });
+
+function getOpponent(opponentName) {
+   return monsters.filter((monster) => {
+      return monster.name.toLowerCase().includes(opponentName.toLowerCase());
+   })[0];
+}
 
 function rollDefense(char) {
    const defendingChar = deepCopy(char);
@@ -155,7 +212,12 @@ function rollCombat(attacker, target, attackType) {
    console.log("The armor class targeted is:", targetArmorClass);
    console.log(attacker.name, "hits AC:", attackerAttack);
 
-   if (attackerAttack >= targetArmorClass) {
+   if (attackType === defend) {
+      showCombatReadout(
+         "#combat-readout",
+         getCombatMessage(attacker.name, 0, attackType)
+      );
+   } else if (attackerAttack >= targetArmorClass) {
       let attackerDamage =
          getDamage(attacker, attackType) - getDamageReduction(target);
       console.log(
@@ -171,12 +233,12 @@ function rollCombat(attacker, target, attackType) {
       targetCurrentHitPoints = targetCurrentHitPoints - attackerDamage;
 
       showCombatReadout(
-         "#combat-readout-goblin",
+         "#combat-readout",
          getCombatMessage(attacker.name, attackerDamage, attackType)
       );
    } else {
       showCombatReadout(
-         "#combat-readout-goblin",
+         "#combat-readout",
          getCombatMessage(attacker.name, 0, attackType)
       );
    }
@@ -271,7 +333,9 @@ function showCombatReadout(element, combatMessage) {
 }
 
 function getCombatMessage(char, val, attackType) {
-   if (val !== 0) {
+   if (attackType === defend) {
+      return `<p>${char} ${attackType.description}. </p>`;
+   } else if (val !== 0) {
       return `<p>${char} ${attackType.description} for ${val} damage. </p>`;
    } else {
       return `<p>${char} misses.</p>`;
