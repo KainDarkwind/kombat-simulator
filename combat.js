@@ -129,6 +129,7 @@ let heroCurrentHitPoints = heroMaxHitPoints;
 console.log("The opponent", opponent);
 console.log("The opponent's level", opponent.level);
 
+$(`#opponent-name`).html(opponent.name);
 $(`#opponent-hit-points`).html(
    `${opponentCurrentHitPoints}/${opponentMaxHitPoints}`
 );
@@ -190,6 +191,10 @@ $("#defend-button-opponent").click(function (e) {
    const heroDef = rollDefense(hero);
    rollCombat(hero, opponent, defend);
    rollCombat(opponent, heroDef, slash);
+});
+
+$("#reload").click(function (e) {
+   $(`#combat-readout`).html("");
 });
 
 function getOpponent(opponentName) {
@@ -310,6 +315,7 @@ function checkBackstab(attackType, weaponValue) {
       console.log("There's a chance", backstabChance);
       if (backstabChance + weaponValue >= 10) {
          console.log("It's a backstab");
+         $(`#combat-readout`).append("BACKSTAB!");
          return 10;
       } else {
          console.log("Not a backstab");
