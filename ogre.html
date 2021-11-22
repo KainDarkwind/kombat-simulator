@@ -16,41 +16,172 @@
                      Kain's Kombat Simulator
                   </h3></a
                >
+               <a href="/index.html" class="btn btn-link float-right"
+                  ><img src="icons/icon-door-exit.svg" width="28px" />Log Out</a
+               >
+            </div>
+            <div class="col-12">
+               <a href="/arena.html" class="btn btn-link mt-5 mr-5"
+                  ><img src="icons/sword02.svg" width="28px" />Arena</a
+               >
             </div>
          </div>
+         <hr class="font-weight-bold" />
       </div>
+
       <div class="container">
          <div class="row">
-            <div class="col">
-               <div>
-                  <p>Ogre Image goes here</p>
-               </div>
-               <div>
-                  <p>Ogre stats go here</p>
-               </div>
+            <div class="col-4 mt-1" id="orc-full-col">
+               <img src="/images/ogre.jpg" class="mr-2 mt-1" height="300px" />
             </div>
-            <div class="col">
-               <div>
-                  <p>Hero Image goes here</p>
-               </div>
-               <div>
-                  <p>Hero stats go here</p>
-               </div>
+
+            <div class="col-4">
+               <button
+                  class="btn btn-block btn-primary ml-2 mt-9"
+                  id="stab-button-opponent"
+               >
+                  Stab
+               </button>
+               <button
+                  class="btn btn-block btn-primary ml-2 mt-3"
+                  id="slash-button-opponent"
+               >
+                  Slash
+               </button>
+
+               <button
+                  class="btn btn-block btn-primary ml-2 mt-3"
+                  id="defend-button-opponent"
+               >
+                  Defend
+               </button>
+            </div>
+            <div class="col-4">
+               <img
+                  src="/images/hero-female.jpg"
+                  class="mr-2 mt-1"
+                  height="300px"
+               />
             </div>
          </div>
       </div>
+
       <div class="container">
          <div class="row">
-            <div class="col">
-               <p>
-                  Combat Readout goes here and it should go across the whole
-                  screen.
-               </p>
+            <div class="col-4 border p-1">
+               <p class="font-weight-bold text-center">Opponent</p>
+               <div class="container">
+                  <div class="row">
+                     <div class="col-6">Level:</div>
+                     <div class="d-inline" id="opponent-level"></div>
+                  </div>
+               </div>
+               <div class="container">
+                  <div class="row">
+                     <div class="col-6">Hit Points:</div>
+                     <div class="d-inline" id="opponent-hit-points"></div>
+                  </div>
+               </div>
+
+               <div class="container">
+                  <div class="row">
+                     <div class="col-6">AC:</div>
+                     <div class="d-inline" id="opponent-armor-class"></div>
+                  </div>
+               </div>
+
+               <div class="container">
+                  <div class="row">
+                     <div class="col-6">Weapon:</div>
+                     <div class="d-inline" id="opponent-weapon"></div>
+                  </div>
+               </div>
+
+               <div class="container">
+                  <div class="row">
+                     <div class="col-6">Armor:</div>
+                     <div class="d-inline" id="opponent-armor"></div>
+                  </div>
+               </div>
+
+               <div class="container">
+                  <div class="row">
+                     <div class="col-2">Str:</div>
+                     <div class="d-inline col-2" id="opponent-strength"></div>
+                     <div class="d-inline col-2">Dex:</div>
+                     <div class="d-inline col-2" id="opponent-dexterity"></div>
+                     <div class="d-inline col-2">End:</div>
+                     <div class="d-inline col-2" id="opponent-endurance"></div>
+                  </div>
+                  <div class="row">
+                     <div class="col-2">Mnd:</div>
+                     <div class="d-inline col-2" id="opponent-mind"></div>
+                     <div class="d-inline col-2">Agi:</div>
+                     <div class="d-inline col-2" id="opponent-agility"></div>
+                     <div class="d-inline col-2">Spr:</div>
+                     <div class="d-inline col-2" id="opponent-spirit"></div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-4 mt-8 p-5 border">
+               <p id="combat-readout"></p>
+            </div>
+            <div class="col-4 mt-1 border p-1" id="hero-full-col">
+               <p class="font-weight-bold text-center">Hero</p>
+               <div class="container">
+                  <div class="row">
+                     <div class="col-6">Level:</div>
+                     <div class="d-inline" id="hero-level"></div>
+                  </div>
+               </div>
+               <div class="container">
+                  <div class="row">
+                     <div class="col-6">Hit Points:</div>
+                     <div class="d-inline" id="hero-hit-points"></div>
+                  </div>
+               </div>
+
+               <div class="container">
+                  <div class="row">
+                     <div class="col-6">AC:</div>
+                     <div class="d-inline" id="hero-armor-class"></div>
+                  </div>
+               </div>
+
+               <div class="container">
+                  <div class="row">
+                     <div class="col-6">Weapon:</div>
+                     <div class="d-inline" id="hero-weapon"></div>
+                  </div>
+               </div>
+
+               <div class="container">
+                  <div class="row">
+                     <div class="col-6">Armor:</div>
+                     <div class="d-inline" id="hero-armor"></div>
+                  </div>
+               </div>
+
+               <div class="container">
+                  <div class="row">
+                     <div class="col-2">Str:</div>
+                     <div class="d-inline col-2" id="hero-strength"></div>
+                     <div class="d-inline col-2">Dex:</div>
+                     <div class="d-inline col-2" id="hero-dexterity"></div>
+                     <div class="d-inline col-2">End:</div>
+                     <div class="d-inline col-2" id="hero-endurance"></div>
+                  </div>
+                  <div class="row">
+                     <div class="col-2">Mnd:</div>
+                     <div class="d-inline col-2" id="hero-mind"></div>
+                     <div class="d-inline col-2">Agi:</div>
+                     <div class="d-inline col-2" id="hero-agility"></div>
+                     <div class="d-inline col-2">Spr:</div>
+                     <div class="d-inline col-2" id="hero-spirit"></div>
+                  </div>
+               </div>
             </div>
          </div>
-      </div>
-      <div class="btn btn-primary">
-         <a href="/arena.html">Clicking this takes you back to arena</a>
       </div>
 
       <script
@@ -59,6 +190,7 @@
          integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
          crossorigin="anonymous"
       ></script>
+      <script src="/combat.js" defer></script>
       <script src="/script.js" defer></script>
    </body>
 </html>
