@@ -108,6 +108,7 @@ const hero = {
    image: "hero-female.jpg",
    hitDie: 10,
    maxHp: 10,
+   maxAp: 5,
    armor: armors[2],
    attack: 2,
    weapon: weapons[1],
@@ -125,6 +126,8 @@ const opponentMaxHitPoints = getHitPoints(opponent);
 let opponentCurrentHitPoints = opponentMaxHitPoints;
 const heroMaxHitPoints = getHitPoints(hero);
 let heroCurrentHitPoints = heroMaxHitPoints;
+const heroMaxActionPoints = getActionPoints(hero);
+let heroCurrentActionPoints = heroMaxActionPoints;
 
 console.log("The opponent", opponent);
 console.log("The opponent's level", opponent.level);
@@ -148,6 +151,9 @@ $(`#opponent-spirit`).html(opponent.spirit);
 
 $(`#hero-armor-class`).html(hero.armor.armorClass + hero.agility);
 $(`#hero-hit-points`).html(`${heroCurrentHitPoints}/${heroMaxHitPoints}`);
+$(`#hero-action-points`).html(
+   `${heroCurrentActionPoints}/${heroMaxActionPoints}`
+);
 $(`#hero-level`).html(hero.level);
 $(`#hero-weapon`).html(hero.weapon.description);
 $(`#hero-armor`).html(hero.armor.description);
@@ -174,23 +180,27 @@ const slash = {
 
 const defend = {
    description: "defends",
+   damage: 0,
    apCost: -2,
 };
 
 $("#stab-button-opponent").click(function (e) {
    rollCombat(opponent, hero, slash);
    rollCombat(hero, opponent, stab);
+   spendActionPoints(stab);
 });
 
 $("#slash-button-opponent").click(function (e) {
    rollCombat(opponent, hero, slash);
    rollCombat(hero, opponent, slash);
+   spendActionPoints(slash);
 });
 
 $("#defend-button-opponent").click(function (e) {
    const heroDef = rollDefense(hero);
    rollCombat(hero, opponent, defend);
    rollCombat(opponent, heroDef, slash);
+   spendActionPoints(defend);
 });
 
 $("#reload").click(function (e) {
@@ -201,6 +211,12 @@ function getOpponent(opponentName) {
    return monsters.filter((monster) => {
       return monster.name.toLowerCase().includes(opponentName.toLowerCase());
    })[0];
+}
+
+function spendActionPoints(attack) {
+   let heroCurrentActionPoints = heroMaxActionPoints;
+   heroCurrentActionPoints = heroCurrentActionPoints - attack.apCost;
+   return heroCurrentActionPoints;
 }
 
 function rollDefense(char) {
@@ -353,6 +369,12 @@ function getHitPoints(character) {
       getRandomInt(1, character.hitDie) + character.endurance;
    totalHitPoints = character.level * hitPointsFromHitDie;
    return totalHitPoints;
+}
+
+function getActionPoints(character) {
+   baseActionPoints = 2 + character.mind;
+   totalActionPoints = character.level * baseActionPoints;
+   return totalActionPoints;
 }
 
 function getRandomInt(min, max) {
